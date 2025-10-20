@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Just buy a little coffee and be yourself ☕</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", "Segoe UI", sans-serif;
+      background-color: #ffeaf3;
+      color: #3b2f2f;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: #ff7ba7;
+      margin-bottom: 0.3em;
+      animation: fadeIn 2s ease forwards;
+    }
+
+    p.subtitle {
+      font-size: 1.1em;
+      color: #b8708a;
+      margin-bottom: 2em;
+      animation: fadeIn 3s ease forwards;
+    }
+
+    .quote-box {
+      background: #fff;
+      border-radius: 20px;
+      padding: 1.5em 2em;
+      box-shadow: 0 4px 20px #ffc7dc80;
+      max-width: 400px;
+      animation: fadeIn 4s ease forwards;
+    }
+
+    .quote {
+      font-style: italic;
+      color: #6b4b55;
+    }
+
+    button {
+      margin-top: 2em;
+      padding: 0.8em 1.8em;
+      font-size: 1em;
+      border: none;
+      border-radius: 30px;
+      background: #ffc7dc;
+      color: #4a3a3a;
+      cursor: pointer;
+      box-shadow: 0 0 10px #ffc7dc80;
+      transition: box-shadow 0.3s ease, transform 0.2s ease;
+    }
+
+    button:hover {
+      box-shadow: 0 0 20px #ffc7dc;
+      transform: translateY(-2px);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    footer {
+      position: absolute;
+      bottom: 20px;
+      font-size: 0.9em;
+      color: #a17788;
+      animation: fadeIn 5s ease forwards;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="fade-in">Just buy a little coffee and be yourself ☕</h1>
+  <p class="subtitle">Тихие минуты — самые честные 🪷</p>
+
+  <div class="quote-box">
+    <p class="quote" id="quote">
+      “Иногда, чтобы услышать себя — нужно просто замолчать.”
+    </p>
+  </div>
+
+  <button onclick="newQuote()">💌 Новая цитата</button>
+
+  <footer>Жизнь любит тишину</footer>
+
+  <script>
+    const quotes = [
+      "“Иногда, чтобы услышать себя — нужно просто замолчать.”",
+      "“Ты не опоздал. Ты просто идёшь в своём темпе.”",
+      "“Счастье — это когда внутри спокойно.”",
+      "“Никто не торопится в вечность, но все бегут куда-то.”",
+      "“Любовь — это когда молчание звучит громче слов.”",
+      "“Иди медленно. Мир подождёт.”"
+    ];
+
+    function newQuote() {
+      const quoteText = document.getElementById("quote");
+      const random = Math.floor(Math.random() * quotes.length);
+      quoteText.textContent = quotes[random];
+    }
+  </script>
+</body>
+</html>
